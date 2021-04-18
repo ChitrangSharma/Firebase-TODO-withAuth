@@ -28,8 +28,8 @@ function Signin() {
        <h3>Please Signup</h3>
        <form onSubmit={(e)=>handleSubmit(e)}>
        <div className="input-field col s6">
-           <input type="email" placeholder="email" onChange={(e)=>setEmail(e.target.value)} />
-           <input type="password" placeholder="password" onChange={(e)=>setPassword(e.target.value)} />
+           <input type="email" placeholder="email" value={email} onChange={(e)=>setEmail(e.target.value)} />
+           <input type="password" placeholder="password" value={password} onChange={(e)=>setPassword(e.target.value)} />
        </div>
        <Button type="submit" >Signup</Button>
         </form>
