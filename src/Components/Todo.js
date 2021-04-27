@@ -3,6 +3,7 @@ import './Todo.css'
 import{db}from '../firebase'
 import{useHistory}from "react-router-dom"
 import { Button } from '@material-ui/core'
+import Colock from './Colock'
 
 let unsubscribe =()=>{}
 function Todo({user}) {
@@ -37,6 +38,7 @@ function Todo({user}) {
         db.collection('todos').doc(user.uid).set({
             todos:[...myTodos, text]
         })
+        setText("")
     }
     const deleteTodo=(deleteTodo)=>{
         const docRef = db.collection('todos').doc(user.uid)
@@ -50,7 +52,9 @@ function Todo({user}) {
     }
     return (
         <div className="main center container" style={{maxWidth:"500px"}}>
+       <Colock/>
       <h3>Add todos</h3>
+     
       <div className="input-field col s6">
            <input type="text" placeholder="Enter Todo" value={text} onChange={(e)=>setText(e.target.value)} />
             <Button  onClick={()=>{addTodo()}}> ADD</Button>

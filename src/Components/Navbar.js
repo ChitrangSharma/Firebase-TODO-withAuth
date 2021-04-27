@@ -8,12 +8,12 @@ function Navbar({user}) {
     return (
         <nav>
         <div className="nav-wrapper ">
-          <Link to="/" className="brand-logo">Logo</Link>
+          <Link to="/" className="brand-logo"><img className="logo__edit" src="logo.png"/></Link>
           
           <ul id="nav-mobile" className="right hide-on-med-and-down">
           {user?   <li><button onClick={()=>{auth.signOut()  
           history.push('/login')
-          }}className="btn red" >Logout</button></li>
+          }}className="btn red" style={{marginRight:"20px"}} >Logout</button></li>
           :<><li><Link to="/login">Login</Link></li>
             <li><Link to="/signin">Singin</Link></li></>}
             
